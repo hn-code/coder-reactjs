@@ -1,0 +1,28 @@
+.navbar {
+    height: 15vh;
+    width: 100vw;
+    background-color: #152453;
+    color: azure;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 2px solid azure;
+    font-size: 1.1rem;
+}
+
+.navbarUl {
+    list-style: none;
+    display: flex;
+}
+
+.navbarUl li {
+    margin: 0px 0.5vw;
+    padding: 1vh 0.5vw;
+    border-radius: 5px;
+}
+
+.navbarUl li:hover {
+    color: #152453;
+    background-color: azure;
+    cursor: pointer;
+}
