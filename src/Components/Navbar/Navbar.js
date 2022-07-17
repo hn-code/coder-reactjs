@@ -4,6 +4,13 @@ import { navbarOptions } from './Helpers/navbarOptions'
 import CartWidget from '../CartWidget/CartWidget'
 
 const Navbar = () => {
+
+    const nbOpts = navbarOptions.map((navbarOption) => {
+        return (
+            <li key={navbarOption.id}>{navbarOption.category}</li>
+        )
+    });
+
     return (
         <nav className='navbar'>
             <div className="brand">
@@ -11,18 +18,7 @@ const Navbar = () => {
             </div>
             <div>
                 <ul className='navbarUl'>
-                    <li>
-                        {navbarOptions[0].category}
-                    </li>
-                    <li>
-                        {navbarOptions[1].category}
-                    </li>
-                    <li>
-                        {navbarOptions[2].category}
-                    </li>
-                    <li>
-                        {navbarOptions[3].category}
-                    </li> 
+                    {nbOpts}
                 </ul>
             </div>
                 <CartWidget/>
