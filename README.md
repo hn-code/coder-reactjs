@@ -1,12 +1,3 @@
-decargar del repo con el comando clon de git
-luego de descargado npm install
-npm start
-
-librerias usadas react-hooks - react-route
-rutas dentro de la app
-cad componente lo que tendria que tener 
-
-
 ##Descarga:
 Para descargar el proyecto basta con clonar el repositorio con el siguiente comando
 ###git clone https://github.com/hn-code/coder-reactjs
@@ -17,6 +8,11 @@ Una vez ya clonado y dentro de la carpeta principal estando en el mismo director
 
 Una vez instalados los módulos de node para que la aplicación corra correctamente se inicia la app
 ###npm start
+
+##Librerias usadas
+Las librerías usadas en este caso son:
+react-router-dom - Para las rutas dentro de la app
+sweetalert - Para los mensajes de agregados al carrito
 
 ##Dentro de la app
 Ya dentro de la app tendria que iniciarse en https://localhost:3000/ lo cual nos muestra el Navbar en la parte superior con los diferentes tipos de categorías a elegir.
