@@ -1,31 +1,33 @@
 .itemCountContainer {
-    width: 20%;
-    height: 500px;
+    width: 20vw;
+    margin: 50px 0px;
+    height: auto;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background-color: white;
     align-items: center;
     border-radius: 7px;
 }
 
 .itemCountContainer h2 {
-    margin: 0.5rem 0rem;
+    margin: 0rem;
     font-size: 2rem;
     text-align: center;
 }
 
 .itemCountContainer span {
     color: grey;
-    margin: 0.5rem 0rem;
+    margin: 0rem;
 }
 
 .itemCountContainer img {
+    margin-bottom: 1rem;
     border-radius: 7px 7px 0px 0px;
     width: 100%;
     box-shadow: 0px 0px 5px black;
 }
 
-.itemCountContainer .addCartBtn,
 .itemCountContainer .descBtn {
     width: 100%;
     height: 50px;
@@ -39,8 +41,10 @@
 
 .itemCountContainer .descBtn {
     width: 80%;
-    height: 30px;
+    height: 50px;
     margin: 10px 0px;
+    text-align: center;
+    text-decoration: none;
 }
 
 .itemCountContainer .price {
@@ -49,30 +53,6 @@
     font-weight: bold;
 }
 
-.itemCountSelector {
-    font-size: 1.1rem;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-.itemCountSelector h3 {
-    font-size: 2rem;
-}
-
-.itemCountSelector button {
-    border: 2px solid rgb(139, 162, 231);
-    border-radius: 7px;
-    width: 20%;
-    height: 95%;
-    font-size: 1.5rem;
-    color: rgb(63, 63, 63);
-    background-color: rgb(208, 224, 240);
-}
-
-.itemCountSelector button:hover,
-.itemCountContainer button:hover {
+.itemCountContainer .descBtn:hover {
     background-color: rgb(174, 209, 244);
 }

@@ -1,18 +1,14 @@
 export const navbarOptions = [
     {
-        category: 'Componentes PC',
-        id:'Componentes PC'
+        category: 'Tarjetas Graficas',
+        id:'graphic_cards'
     },
     {
         category: 'Equipos Armados',
-        id:'Equipos Armados'
+        id:'desktops'
     },
     {
         category: 'Laptops',
-        id:'Laptops'
-    },
-    {
-        category: 'Otros',
-        id:'Otros'
+        id:'laptops'
     }
 ]

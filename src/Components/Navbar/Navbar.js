@@ -2,19 +2,20 @@ import './Navbar.css'
 import './Helpers/navbarOptions'
 import { navbarOptions } from './Helpers/navbarOptions'
 import CartWidget from '../CartWidget/CartWidget'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
     const nbOpts = navbarOptions.map((navbarOption) => {
         return (
-            <li key={navbarOption.id}>{navbarOption.category}</li>
+            <Link to={`/category/${navbarOption.id}`} key={navbarOption.id}>{navbarOption.category}</Link>
         )
     });
 
     return (
         <nav className='navbar'>
             <div className="brand">
-                <img src="imgs/logo.png" alt="logo-HS"/>
+                <Link to="/" ><img src="./imgs/logo.png" alt="logo-HS"/></Link>
             </div>
             <div>
                 <ul className='navbarUl'>

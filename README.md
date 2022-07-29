@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+decargar del repo con el comando clon de git
+luego de descargado npm install
+npm start
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+librerias usadas react-hooks - react-route
+rutas dentro de la app
+cad componente lo que tendria que tener 
 
-## Available Scripts
 
-In the project directory, you can run:
+##Descarga:
+Para descargar el proyecto basta con clonar el repositorio con el siguiente comando
+###git clone https://github.com/hn-code/coder-reactjs
 
-### `npm start`
+##Instalación
+Una vez ya clonado y dentro de la carpeta principal estando en el mismo directorio que  el archivo package.json ejecutar el siguiente comando
+###npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Una vez instalados los módulos de node para que la aplicación corra correctamente se inicia la app
+###npm start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##Dentro de la app
+Ya dentro de la app tendria que iniciarse en https://localhost:3000/ lo cual nos muestra el Navbar en la parte superior con los diferentes tipos de categorías a elegir.
 
-### `npm test`
+En esta dirección que podriamos denominar el "home" se muestra un componente denominado "ItemListContainer" con todos los productos representados con su componente "Item", donde cada uno cuenta con su botón de descripción para acceder a ver más detalles del producto.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Una vez clickeada alguna categoria, el componente anteriormente nombrado (ItemListContainer) se actualiza y toma los datos de la dirección URL la cual establece que productos van a ser vistos, por ejemplo:
+La dirección "/category/desktops" mostrará todos los equipos de escritorio y la dirección "/category/graphic_cards" las tarjetas gráficas
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Al clickear sobre el boton de "Detalles del producto" se renderizara un componente denominado "ItemDetailContainer" que contendrá el componente "ItemDetail" con detalles del producto al igual que con un contador para agregar la cantidad que queramos del producto siempre y cuando no supere el stock.

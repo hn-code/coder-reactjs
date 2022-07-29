@@ -1,0 +1,92 @@
+
+.itemDetailContainer {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+}
+
+.itemDetailContainer h2 {
+    margin: 0rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.itemDetailContainer .price {
+    font-size: 1.2rem;
+    margin: 0px;
+    font-weight: bold;
+}
+
+.itemDetailContainer span {
+    color: grey;
+    margin: 0rem;
+}
+
+.itemDetailContainer img {
+    border-radius: 7px;
+    width: 40%;
+    height: 350px;
+    box-shadow: 0px 0px 5px black;
+}
+
+.itemDetailInfo {
+    width: 50%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.itemDetailInfo .description {
+    width: 80%;
+    min-height: 50%;
+}
+
+.itemDetailCount {
+    width: 20%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.itemCountSelector {
+    font-size: 1.1rem;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemCountSelector h3 {
+    font-size: 2rem;
+}
+
+.itemCountSelector button{
+    border: 2px solid rgb(139, 162, 231);
+    border-radius: 7px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    color: rgb(63, 63, 63);
+    background-color: rgb(208, 224, 240);
+}
+
+.addToCartBtn {
+    border: 2px solid rgb(139, 162, 231);
+    border-radius: 7px;
+    width: 100%;
+    height: 50px;
+    font-size: 1rem;
+    color: rgb(63, 63, 63);
+    background-color: rgb(208, 224, 240);
+}
