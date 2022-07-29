@@ -1,20 +1,20 @@
-##Descarga:
+Descarga:
 Para descargar el proyecto basta con clonar el repositorio con el siguiente comando
-###git clone https://github.com/hn-code/coder-reactjs
+git clone https://github.com/hn-code/coder-reactjs
 
-##Instalación
+Instalación
 Una vez ya clonado y dentro de la carpeta principal estando en el mismo directorio que  el archivo package.json ejecutar el siguiente comando
-###npm install
+npm install
 
 Una vez instalados los módulos de node para que la aplicación corra correctamente se inicia la app
-###npm start
+npm start
 
-##Librerias usadas
+Librerias usadas
 Las librerías usadas en este caso son:
 react-router-dom - Para las rutas dentro de la app
 sweetalert - Para los mensajes de agregados al carrito
 
-##Dentro de la app
+Dentro de la app
 Ya dentro de la app tendria que iniciarse en https://localhost:3000/ lo cual nos muestra el Navbar en la parte superior con los diferentes tipos de categorías a elegir.
 
 En esta dirección que podriamos denominar el "home" se muestra un componente denominado "ItemListContainer" con todos los productos representados con su componente "Item", donde cada uno cuenta con su botón de descripción para acceder a ver más detalles del producto.
