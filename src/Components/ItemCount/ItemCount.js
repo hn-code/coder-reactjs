@@ -1,8 +1,6 @@
 import { useState } from 'react';
 
-import './ItemCount.css';
-
-const ItemCount = ({stock, onAdd}) => {
+const ItemCount = ({stock, onAddToCart}) => {
 
     const [count, setCount] = useState(1);
 
@@ -17,27 +15,15 @@ const ItemCount = ({stock, onAdd}) => {
             setCount(count - 1);
         }
     }
-    
-    const onAddToCart = () => {
-        if( count > 0 ){
-            onAdd(count)
-        }
-    }
 
     return(
-        <div className="itemCountContainer">
-            <h2>Graphic Card</h2>
-            <span>Stock: {stock}</span>
-            <img src='imgs/offers/gpu.jpg' alt='gpu'>
-            </img>
+        <div className="itemDetailCount">
             <div className='itemCountSelector'>
                 <button onClick={decrement}>-</button>
-                <h3 className='itemCountValue'>
-                    {count}
-                </h3>
+                <h3 className='itemCountValue'>{count}</h3>
                 <button onClick={increment}>+</button>
             </div>
-            <button className='addCartBtn' onClick={onAddToCart}>Agregar al carrito</button>
+            <button className='addToCartBtn' onClick={() => {onAddToCart(count)}}>Agregar al carrito</button>
         </div>
     )
 }

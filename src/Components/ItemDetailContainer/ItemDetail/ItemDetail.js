@@ -1,32 +1,23 @@
-import { useState } from "react";
 import './ItemDetail.css';
-import swal from "sweetalert"
+import ItemCount from '../../ItemCount/ItemCount';
+import { useState } from 'react';
+import swal from "sweetalert";
+import { Link } from 'react-router-dom';
+
 
 const ItemDetail = ({product}) => {
 
-    console.log(product)
+    const [quantity, setQuantity] = useState(0);
 
-    const [count, setCount] = useState(1);
-
-    const increment = () => {
-        if (count < product.stock) {
-            setCount(count + 1);
-        }
-    };
-
-    const decrement = () => {
-        if (count > 1) {
-            setCount(count - 1);
-        }
-    };
-
-    const onAddToCart = () => {
+    const onAddToCart = (quantityOnCount) => {
         swal({
-        title: ` Cantidad de elementos agregados: ${count} `,
+        title: ` Cantidad de elementos agregados: ${quantityOnCount} `,
         icon: "success",
         timer: 1500,
         buttons: false
         })
+
+        setQuantity(quantityOnCount)
     }
 
     return (
@@ -38,14 +29,7 @@ const ItemDetail = ({product}) => {
                 <span>Stock: {product.stock}</span>
                 <div className="description">{product.description}</div>
             </div>
-            <div className="itemDetailCount">
-                <div className="itemCountSelector">
-                    <button onClick={decrement}>-</button>
-                    <h3 className="itemCountValue">{count}</h3>
-                    <button onClick={increment}>+</button>
-                </div>
-                <button className="addToCartBtn" onClick={onAddToCart}>Agregar al carrito</button>
-            </div>
+            { quantity > 0 ? <Link to="/cart">Ir al carrito</Link> : <ItemCount stock={product.stock} onAddToCart={onAddToCart}/>}
         </div>
     );
 };
