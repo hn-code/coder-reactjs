@@ -1,25 +1,35 @@
 import './ItemDetail.css';
-import ItemCount from '../../ItemCount/ItemCount';
-import { useState } from 'react';
+import ItemCount from '../ItemCount/ItemCount';
+import { useContext, useState} from 'react';
 import swal from "sweetalert";
 import { Link } from 'react-router-dom';
+import {CartContext} from '../../Context/CartContext';
 
 
 const ItemDetail = ({product}) => {
 
     const [quantity, setQuantity] = useState(0);
 
-    const onAddToCart = (quantityOnCount) => {
+    const {addItem, getProductQuantity} = useContext(CartContext)
+
+    const quantityAdded = getProductQuantity(product.id)
+
+    console.log("quanitityAdded es: "+quantityAdded)
+
+    const onAddToCart = (quantity) => {
         swal({
-        title: ` Cantidad de elementos agregados: ${quantityOnCount} `,
+        title: ` Cantidad de elementos agregados: ${quantity} `,
         icon: "success",
         timer: 1500,
         buttons: false
         })
 
-        setQuantity(quantityOnCount)
-    }
+        setQuantity(quantity)
 
+        addItem({...product, quantity});
+
+    }
+    
     return (
         <div className="itemDetailContainer">
             <img src={product.img} alt={product.name}/>
@@ -29,7 +39,7 @@ const ItemDetail = ({product}) => {
                 <span>Stock: {product.stock}</span>
                 <div className="description">{product.description}</div>
             </div>
-            { quantity > 0 ? <Link to="/cart">Ir al carrito</Link> : <ItemCount stock={product.stock} onAddToCart={onAddToCart}/>}
+            { quantity > 0 ? <Link to="/cart">Ir al carrito</Link> : <ItemCount stock={product.stock} initial={quantityAdded} onAddToCart={onAddToCart}/>}
         </div>
     );
 };

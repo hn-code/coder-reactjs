@@ -1,8 +1,11 @@
 import { useState } from 'react';
 
-const ItemCount = ({stock, onAddToCart}) => {
+const ItemCount = ({stock, initial = 1, onAddToCart}) => {
 
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState(initial);
+
+    console.log("initial se recibe como: " + initial);
+    console.log("count vale: " + count);
 
     const increment = () => {
         if(count < stock){
