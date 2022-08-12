@@ -5,11 +5,12 @@
     padding: 0px 0px;
     width: 100%;
     flex-wrap: wrap;
+    margin-top: 40px;
 }
 
 .title {
     color: white;
-    width: 40%;
+    width: 100%;
     margin: 20px auto;
     padding: 15px 0px;
     text-align: center;
@@ -17,6 +18,3 @@
     border-radius: 7px;
 }
 
-.itemContainer{
-    background-color: black;
-}

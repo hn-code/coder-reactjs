@@ -3,6 +3,8 @@ import './Helpers/navbarOptions'
 import { navbarOptions } from './Helpers/navbarOptions'
 import CartWidget from '../CartWidget/CartWidget'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../Context/CartContext'
 
 const Navbar = () => {
 
@@ -11,6 +13,10 @@ const Navbar = () => {
             <Link to={`/category/${navbarOption.id}`} key={navbarOption.id}>{navbarOption.category}</Link>
         )
     });
+
+    const {cartOff} = useContext(CartContext);
+
+    const cartWidgetStyle = cartOff() ? 'navbar__cartWidget cartWidgetDisabled' : 'navbar__cartWidget';
 
     return (
         <nav className='navbar'>
@@ -22,7 +28,9 @@ const Navbar = () => {
                     {nbOpts}
                 </ul>
             </div>
-                <CartWidget/>
+            <div className={cartWidgetStyle}>
+                <Link to="/cart"><CartWidget/></Link>
+            </div>
             <div>
                 <input type="search" placeholder='Que buscas?'>
                 </input>

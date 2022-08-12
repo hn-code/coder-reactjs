@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import './ItemCount.css'
+import { useEffect, useState } from 'react';
 
 const ItemCount = ({stock, initial = 1, onAddToCart}) => {
 
     const [count, setCount] = useState(initial);
 
-    console.log("initial se recibe como: " + initial);
-    console.log("count vale: " + count);
+    useEffect(() => {
+      setCount(initial)
+    }, [initial])
+    
 
     const increment = () => {
         if(count < stock){

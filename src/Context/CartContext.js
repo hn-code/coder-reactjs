@@ -52,8 +52,16 @@ export const CartContextProvider = ({children}) => {
         return product?.quantity
     }
 
+    const cartOff = () => {
+        if(cart.length === 0){
+            return true
+        } else {
+            return false
+        }
+    }
+
     return (
-        <CartContext.Provider value= {{ cart, addItem, isInCart, removeItem, clearCart, getQuantity, getProductQuantity}}>
+        <CartContext.Provider value= {{ cart, addItem, isInCart, removeItem, clearCart, getQuantity, getProductQuantity, cartOff}}>
             {children}
         </CartContext.Provider>
     )

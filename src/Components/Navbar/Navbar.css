@@ -47,3 +47,18 @@
     background-color: azure;
     cursor: pointer;
 }
+
+.navbar__cartWidget {
+    width: 70px;
+}
+.navbar__cartWidget a {
+    color: azure;
+    text-decoration: none;
+}
+.navbar__cartWidget img {
+    width: 100%;
+}
+
+.cartWidgetDisabled {
+    display: none;
+}

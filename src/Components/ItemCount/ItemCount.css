@@ -1,7 +1,6 @@
 .itemCountContainer {
-    width: 22vw;
-    max-height: 80vh;
-    margin: auto;
+    min-width: 275px;
+    margin: 20px 0px;
     display: flex;
     flex-direction: column;
     background-color: white;

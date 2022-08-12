@@ -1,4 +1,4 @@
-import './ItemDetail.css';
+import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount';
 import { useContext, useState} from 'react';
 import swal from "sweetalert";
@@ -13,8 +13,6 @@ const ItemDetail = ({product}) => {
     const {addItem, getProductQuantity} = useContext(CartContext)
 
     const quantityAdded = getProductQuantity(product.id)
-
-    console.log("quanitityAdded es: "+quantityAdded)
 
     const onAddToCart = (quantity) => {
         swal({
