@@ -21,18 +21,17 @@ export const CartContextProvider = ({children}) => {
                     return prod
                 }
             })
-
             setCart(cartUpdated)
         }
     }
 
     const isInCart = (id) => {
-        return cart.some(product=> product.id === id)
+        return cart.some(product => product.id === id)
     }
 
     const removeItem = (id) => {
-        const cartWithoutItem = cart.filter(prod => prod.id !== id);
-        setCart(cartWithoutItem);
+        const cartItemRemoved = cart.filter(prod => prod.id !== id);
+        setCart(cartItemRemoved);
     }
 
     const clearCart = () => {
