@@ -23,7 +23,7 @@ const ItemListContainer = (props) => {
                         ...doc.data()}
             })
             setProducts(products)
-        },[products])
+        },[categoryId])
     })
 
     return(
