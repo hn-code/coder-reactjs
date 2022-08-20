@@ -62,3 +62,8 @@
 .itemCountSelector button:hover {
     background-color: rgb(174, 209, 244);
 }
+
+.disabledBtn {
+    background-color: lightgray;
+    border: 2px solid grey
+}

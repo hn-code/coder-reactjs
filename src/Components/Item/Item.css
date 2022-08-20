@@ -55,3 +55,8 @@
 .itemCountContainer .descBtn:hover {
     background-color: rgb(174, 209, 244);
 }
+
+.descBtn_dis {
+    background-color: lightgrey !important;
+    border: 2px solid grey !important;
+}

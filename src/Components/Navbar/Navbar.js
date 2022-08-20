@@ -14,29 +14,30 @@ const Navbar = () => {
         )
     });
 
-    const {cartOff} = useContext(CartContext);
-
-    const cartWidgetStyle = cartOff() ? 'navbar__cartWidget cartWidgetDisabled' : 'navbar__cartWidget';
+    const { cartOff } = useContext(CartContext);
 
     return (
         <nav className='navbar'>
             <div className="brand">
-                <Link to="/" ><img src="./imgs/logo.png" alt="logo-HS"/></Link>
+                <Link to="/" ><img src="/imgs/logo.png" alt="logo-HS"/></Link>
             </div>
             <div>
                 <ul className='navbarUl'>
                     {nbOpts}
                 </ul>
             </div>
-            <div className={cartWidgetStyle}>
-                <Link to="/cart"><CartWidget/></Link>
-            </div>
-            <div>
-                <input type="search" placeholder='Que buscas?'>
-                </input>
-                <button type="submit"> Buscar
-                </button>
-            </div>
+            {
+                cartOff
+                ?   <div className='navbar__cartWidget'>
+                    <div><CartWidget/></div>
+                    </div>
+                :   <div className='navbar__cartWidget'>
+                    <Link to="/cart"><CartWidget/></Link>
+                    </div>
+                
+            }
+            
+
         </nav>
     )
 }

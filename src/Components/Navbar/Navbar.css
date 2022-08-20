@@ -58,7 +58,3 @@
 .navbar__cartWidget img {
     width: 100%;
 }
-
-.cartWidgetDisabled {
-    display: none;
-}

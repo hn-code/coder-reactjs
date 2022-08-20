@@ -1,6 +1,6 @@
 export const navbarOptions = [
     {
-        category: 'Tarjetas Graficas',
+        category: 'Tarjetas Gráficas',
         id:'graphic_cards'
     },
     {
@@ -10,5 +10,9 @@ export const navbarOptions = [
     {
         category: 'Laptops',
         id:'laptops'
+    },
+    {
+        category: 'Fuentes de Alimentación',
+        id:'power_supplys'
     }
 ]

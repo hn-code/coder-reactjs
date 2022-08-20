@@ -8,10 +8,9 @@ const CartWidget = () => {
 
     const quantity = getQuantity()
 
-    //console.log(quantity)
     return (
         <div className="cartWidget">
-            <img src="imgs/cart.png" alt="cart logo"/>
+            <img src="/imgs/cart.png" alt="cart logo"/>
             {quantity}
         </div>    
     )

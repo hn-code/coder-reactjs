@@ -4,10 +4,15 @@ import { useEffect, useState } from 'react';
 const ItemCount = ({stock, initial = 1, onAddToCart}) => {
 
     const [count, setCount] = useState(initial);
+    const [isStock, setIsStock] = useState(false);
 
     useEffect(() => {
       setCount(initial)
     }, [initial])
+
+    useEffect(()=>{
+        stock > 0 ? setIsStock(true) : setIsStock(false);
+    },[stock, isStock])
     
 
     const increment = () => {
@@ -29,7 +34,12 @@ const ItemCount = ({stock, initial = 1, onAddToCart}) => {
                 <h3 className='itemCountValue'>{count}</h3>
                 <button onClick={increment}>+</button>
             </div>
-            <button className='addToCartBtn' onClick={() => {onAddToCart(count)}}>Agregar al carrito</button>
+            {
+                isStock 
+                ? <button className='addToCartBtn' onClick={() => {onAddToCart(count)}}>Agregar al carrito</button>
+                : <button className='addToCartBtn disabledBtn' disabled>Sin Stock</button>
+            }
+            
         </div>
     )
 }

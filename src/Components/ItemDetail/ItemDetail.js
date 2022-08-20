@@ -21,13 +21,11 @@ const ItemDetail = ({product}) => {
         timer: 1500,
         buttons: false
         })
-
         setQuantity(quantity)
-
         addItem({...product, quantity});
 
     }
-    
+
     return (
         <div className="itemDetailContainer">
             <img src={product.img} alt={product.name}/>
@@ -37,7 +35,9 @@ const ItemDetail = ({product}) => {
                 <span>Stock: {product.stock}</span>
                 <div className="description">{product.description}</div>
             </div>
-            { quantity > 0 ? <Link to="/cart">Ir al carrito</Link> : <ItemCount stock={product.stock} initial={quantityAdded} onAddToCart={onAddToCart}/>}
+            { quantity > 0 
+            ? <Link to="/cart" style={{marginLeft: '20px'}}>Ir al carrito</Link> 
+            : <ItemCount stock={product.stock} initial={quantityAdded} onAddToCart={onAddToCart}/>}
         </div>
     );
 };

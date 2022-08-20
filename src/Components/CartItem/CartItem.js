@@ -4,10 +4,10 @@ import './CartItem.css'
 
 export const CartItem = ({product}) => {
 
-    const {removeItem} = useContext(CartContext);
+    const { removeItem } = useContext(CartContext);
 
     return (
-    <>    
+    <>   
         <div className='cartItem'>
             <p className='cartItem__name'>{product.name}</p>
             <div>

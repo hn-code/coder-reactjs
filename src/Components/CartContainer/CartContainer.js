@@ -6,28 +6,33 @@ import './CartContainer.css'
 
 export const CartContainer = () => {
 
-    const {cart, clearCart} = useContext(CartContext);
+    const {cart, clearCart, totalCart, outOfStock, setOutOfStock, setCart} = useContext(CartContext);
 
     const [prodOnCart, setProdOnCart] = useState([])
     const [empty, setEmpty] = useState(false);
-
-    const prices = [];
-    const total = 0;
-
-    cart.forEach(element => {
-      prices.push(element.price * element.quantity)
-    });
-    const sumTotal = prices.reduce((prev, accu) => prev + accu, total);
-
-    useEffect(()=> {
-        setProdOnCart(cart)
-        if(cart.length === 0) {
-          setEmpty(true)
-        }
+    
+    useEffect(() => {
+      setProdOnCart(cart)
+      cart.length === 0 && setEmpty(true)
     },[cart])
 
-
-
+    const updateCartOutOfStock = () => {
+      const idsOnCart = []
+      const idsOnOOS = []
+      cart.forEach(prod => idsOnCart.push(prod.id));
+      outOfStock.forEach(prod => idsOnOOS.push(prod.id));
+      
+      const actualIds = idsOnCart.filter(id => !idsOnOOS.includes(id))
+      const actualCart = []
+      for (const id of actualIds) {
+        actualCart.push(cart.find(prod => prod.id === id))
+      }
+      setCart(actualCart)
+      setOutOfStock([])
+    }
+    
+    
+    
   return (
     <div className='cartContainer'>
       {empty 
@@ -39,15 +44,18 @@ export const CartContainer = () => {
         ))}
         <div>
           <h1 className='cartContainer__total'>
-          Total: ${sumTotal}
+          Total: ${totalCart}
           </h1>
-          <button className='cartContainer__confirmBtn'>
+          <Link className='cartContainer__confirmBtn' to="/checkout">
             Confirmar Compra
-          </button>
+          </Link>
           <button className='cartContainer__EmptyBtn' onClick={() => {clearCart()}}>
             Vaciar carrito
           </button>
         </div>
+        <button className='cartContainer__UpdateBtn' onClick={()=>{updateCartOutOfStock()}}>
+          Actualizar Carrito
+        </button>
         </>
         }
         
@@ -55,4 +63,5 @@ export const CartContainer = () => {
       
     </div>
   )
+
 }

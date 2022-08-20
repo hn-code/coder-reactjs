@@ -35,6 +35,11 @@
 .cartContainer__confirmBtn {
     color: azure;
     background-color:darkgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: 2px solid black
 }
 
 .cartContainer__confirmBtn:hover,
@@ -42,7 +47,8 @@
     cursor: pointer;
 }
 
-.cartContainer__EmptyBtn{
+.cartContainer__EmptyBtn,
+.cartContainer__UpdateBtn{
     width: 150px;
     height: 30px;
     border-radius: 7px;
@@ -51,6 +57,12 @@
     background-color: rgb(219, 61, 93);
     font-size: large;
     display: block;
+}
+
+.cartContainer__UpdateBtn{
+    height: auto;
+    background-color: orange;
+    cursor: pointer;
 }
 
 .cartContainer__backToHome {
