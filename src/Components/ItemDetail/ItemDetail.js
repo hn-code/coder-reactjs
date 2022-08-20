@@ -36,7 +36,7 @@ const ItemDetail = ({product}) => {
                 <div className="description">{product.description}</div>
             </div>
             { quantity > 0 
-            ? <Link to="/cart" style={{marginLeft: '20px'}}>Ir al carrito</Link> 
+            ? <Link to="/cart" style={{paddingLeft: '50px'}}>Ir al carrito</Link> 
             : <ItemCount stock={product.stock} initial={quantityAdded} onAddToCart={onAddToCart}/>}
         </div>
     );

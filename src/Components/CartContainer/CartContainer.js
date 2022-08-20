@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 import { CartContext } from '../../Context/CartContext';
 import { CartItem } from '../CartItem/CartItem';
 import './CartContainer.css'
@@ -17,6 +18,7 @@ export const CartContainer = () => {
     },[cart])
 
     const updateCartOutOfStock = () => {
+      swal({ title: 'Carrito Actualizado', icon: "success", position: 'top', text: 'Se removieron los productos sin stock'})
       const idsOnCart = []
       const idsOnOOS = []
       cart.forEach(prod => idsOnCart.push(prod.id));
@@ -58,9 +60,6 @@ export const CartContainer = () => {
         </button>
         </>
         }
-        
-      
-      
     </div>
   )
 

@@ -71,8 +71,7 @@ export const Checkout = () => {
         if (outOfStock.length === 0) {
           addDoc(collection(db, "orders"), purchaseOrder).then(res => {
             swal({ title: `${res.id}`, icon: "success", text: "Codigo de su orden de compra"})
-          })
-          .then(res => res(() => batch.commit(), clearCart(), navigate("/")))
+          }).then(batch.commit(), clearCart(), navigate("/"))
         } else {
           swal({ title: 'Productos Agotados', icon: "error", text: "Hay productos que no estan en stock en este momento"})
           navigate("/cart")
