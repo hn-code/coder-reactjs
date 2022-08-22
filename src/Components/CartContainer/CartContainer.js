@@ -18,7 +18,7 @@ export const CartContainer = () => {
     },[cart])
 
     const updateCartOutOfStock = () => {
-      swal({ title: 'Carrito Actualizado', icon: "success", position: 'top', text: 'Se removieron los productos sin stock'})
+      swal({ title: 'Carrito Actualizado', icon: "success", position: 'top', text: 'Se actualizó el stock de los productos'})
       const idsOnCart = []
       const idsOnOOS = []
       cart.forEach(prod => idsOnCart.push(prod.id));
@@ -42,7 +42,7 @@ export const CartContainer = () => {
       : <>
         <h1 className='cartContainer__title'>Tu carrito</h1>
         {prodOnCart.map( ele => (
-          <CartItem key={ele.id} product={ele}/>
+          <CartItem key={ele.id} product={ele} />
         ))}
         <div>
           <h1 className='cartContainer__total'>
@@ -54,10 +54,11 @@ export const CartContainer = () => {
           <button className='cartContainer__EmptyBtn' onClick={() => {clearCart()}}>
             Vaciar carrito
           </button>
+          <button className='cartContainer__UpdateBtn' onClick={()=>{updateCartOutOfStock()}}>
+            Actualizar Stock
+          </button>
         </div>
-        <button className='cartContainer__UpdateBtn' onClick={()=>{updateCartOutOfStock()}}>
-          Actualizar Carrito
-        </button>
+        
         </>
         }
     </div>

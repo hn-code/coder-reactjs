@@ -1,4 +1,4 @@
-import { addDoc, collection, Timestamp, getDocs, query, where, documentId, writeBatch, } from "firebase/firestore";
+import { addDoc, collection, documentId, getDocs, query, Timestamp, where, writeBatch } from "firebase/firestore";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
@@ -41,14 +41,13 @@ export const Checkout = () => {
       } else {
         const idsOnCart = cart.map(prod => prod.id);
 
-        const productsOnFirestore = await getDocs(query(collection(db, "products"), where(documentId(), "in", idsOnCart))
-        );
+        const productsOnFirestore = await getDocs(query(collection(db, "products"), where(documentId(), "in", idsOnCart)));
 
         const { docs } = productsOnFirestore;
 
         const batch = writeBatch(db);
 
-        docs.forEach((doc) => {
+        docs.forEach(doc => {
           const dataDoc = doc.data();
           const stockProdDb = dataDoc.stock;
 
@@ -76,7 +75,8 @@ export const Checkout = () => {
           swal({ title: 'Productos Agotados', icon: "error", text: "Hay productos que no estan en stock en este momento"})
           navigate("/cart")
         }
-      }
+
+       }
     } catch (error) {
       console.log(error);
     }
@@ -121,9 +121,8 @@ export const Checkout = () => {
           }}
         ></input>
         <input
-          type="tel"
+          type="text"
           placeholder="Teléfono..."
-          pattern="[0-9]{3} [0-9]{3} [0-9]{3}"
           onChange={(e) => {
             dataFromInput(e, "phone");
           }}
@@ -135,7 +134,7 @@ export const Checkout = () => {
             dataFromInput(e, "address");
           }}
         ></input>
-        <button onClick={generateOrder}>Confirmar Datos</button>
+        <button className='cartContainer__confirmBtn' onClick={generateOrder}>Confirmar Datos</button>
       </form>
     </div>
   );

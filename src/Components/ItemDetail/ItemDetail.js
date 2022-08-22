@@ -14,7 +14,7 @@ const ItemDetail = ({product}) => {
 
     const quantityAdded = getProductQuantity(product.id)
 
-    const onAddToCart = (quantity) => {
+    const onAddToCart = quantity => {
         swal({
         title: ` Cantidad de elementos agregados: ${quantity} `,
         icon: "success",
